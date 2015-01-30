@@ -514,6 +514,7 @@ function requestTick() {
 }
 
 function updatePositions() {
+  ticking = false;
   frame++;
   window.performance.mark("mark_start_frame");
   var items = document.querySelectorAll('.mover');
