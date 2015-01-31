@@ -30,9 +30,14 @@ form {
 }
 
 .mover {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   position: fixed;
   width: 256px;
   z-index: -1;
+
 }
 
 .randomPizzaContainer {
