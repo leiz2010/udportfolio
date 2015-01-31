@@ -524,10 +524,8 @@ function updatePositions() {
   for (var i = 0; i < itemsLength; i++) {
     var item = items[i];
     var phase = Math.sin( radian + (i % 5));
-      //item.style.left = item.basicLeft + 100 * phase + 'px';
-
-      items[i].style.transform = 'translate3d(0, 0, 0)';
-      items[i].style.transform = 'translateX(' + 100 * phase + 'px)';
+    items[i].style.transform = 'translate3d(' + 100 * phase + ', 0, 0)';
+    //items[i].style.transform = 'translateX(' + 100 * phase + 'px)';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
