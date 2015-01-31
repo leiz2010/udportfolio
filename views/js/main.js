@@ -547,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
   var mPizzas = document.querySelector("#movingPizzas1");
 
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 30; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
@@ -558,5 +558,5 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = Math.floor(i / cols) * s + 'px';
     mPizzas.appendChild(elem);
   }
-  updatePositions();
+  //updatePositions();
 });
