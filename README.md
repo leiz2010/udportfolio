@@ -1,65 +1,56 @@
 ## Website Performance Optimization portfolio project
 
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
+Lei zhang
+1/13/2015
 
-To get started, check out the repository, inspect the code,
+First objective of this project is to optimize Cameron's profilo to
+score 90 or better for the index.html on both mobile device and desktop
+computer at https://developers.google.com/speed/pagespeed/insights/  
+Second objective is to display at 60fps when scrolling in pizza.html.
+Third objective is to achieve 5 ms when pizzas resize in pizza.html.
+Github link to the project: https://github.com/leiz2010/udportfolio
+Github host link URL: http://leiz2010.github.io/udportfolio/
 
-### Getting started
+Clone the repo to your local computer to see the fixes with the Github
+project link above or open the host link URL in web browser to see the
+live project.  
 
-Some useful tips to help you get started:
+Fixes added:
 
-1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+Index.html fixes:
+  1. Changed to inline CSS styles.
+  2. Moved style links below script links.
+  3. Added asynce for google-analytics.
+  4. Load google font asynchronously.
+  5. Added viewport.
+  6. Added meida print.
+  7. Compressed and resized profilepic.jpg and pizzeria.jpg
 
-  ```bash
-  $> cd /path/to/your-project-folder
-  $> python -m SimpleHTTPServer 8080
-  ```
+pizza.html fixes
+  1. Changed to inline CSS styles.
+  2. Removed unused CSS styles in twitter bootstrap.
+  3. Added viewport.
+  4. Compressed pizza.png.
 
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
+main.js fixes
+1. Refactored changePizzaSizes function.
+2. Refactored updatePositions funtion.
+3. Added requestAnimationFrame for updatePosition and changePizzaSizes.
+4. Added tick and OnScoll function to control rAF.
+5. Used CSS transform with translateX.
+6. Added 	-webkit-backface-visibility: hidden;
+   -webkit-perspective: 1000; in .mover it handle flicker from
+   GPU acceleration. (Not entirely sure if translateX triggers
+   the GPU acceleration, but pizza images seems to in a separate
+   layer now).
+7. Refactored the anonymous function at bottom of main.js.
 
-  ``` bash
-  $> cd /path/to/your-project-folder
-  $> ngrok 8080
-  ```
+Reference:
+http://davidwalsh.name/translate3d
+http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
+http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
+https://www.igvita.com/2014/05/20/script-injected-async-scripts-considered-harmful/#comment-1398899164
+https://piazza.com/
 
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
-
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
-
-### Optimization Tips and Tricks
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
-
-### Customization with Bootstrap
-The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstrap</a> framework. All custom styles are in `dist/css/portfolio.css` in the portfolio repo.
-
-* <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
-* <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
-
-### Sample Portfolios
-
-Feeling uninspired by the portfolio? Here's a list of cool portfolios I found after a few minutes of Googling.
-
-* <a href="http://www.reddit.com/r/webdev/comments/280qkr/would_anybody_like_to_post_their_portfolio_site/">A great discussion about portfolios on reddit</a>
-* <a href="http://ianlunn.co.uk/">http://ianlunn.co.uk/</a>
-* <a href="http://www.adhamdannaway.com/portfolio">http://www.adhamdannaway.com/portfolio</a>
-* <a href="http://www.timboelaars.nl/">http://www.timboelaars.nl/</a>
-* <a href="http://futoryan.prosite.com/">http://futoryan.prosite.com/</a>
-* <a href="http://playonpixels.prosite.com/21591/projects">http://playonpixels.prosite.com/21591/projects</a>
-* <a href="http://colintrenter.prosite.com/">http://colintrenter.prosite.com/</a>
-* <a href="http://calebmorris.prosite.com/">http://calebmorris.prosite.com/</a>
-* <a href="http://www.cullywright.com/">http://www.cullywright.com/</a>
-* <a href="http://yourjustlucky.com/">http://yourjustlucky.com/</a>
-* <a href="http://nicoledominguez.com/portfolio/">http://nicoledominguez.com/portfolio/</a>
-* <a href="http://www.roxannecook.com/">http://www.roxannecook.com/</a>
-* <a href="http://www.84colors.com/portfolio.html">http://www.84colors.com/portfolio.html</a>
+Special thanks to Kevin Mayo and Haopei Yang for answering my question on
+reducing painting time in https://piazza.com/
