@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <!-- add viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content=" FILL ME IN ">
     <meta name="author" content=" FILL ME IN ">
@@ -14,8 +15,10 @@
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
     </script>
+    <!-- add asynce for google-analytics -->
     <script src="http://www.google-analytics.com/analytics.js" async></script>
     <script async src="js/perfmatters.js"></script>
+    <!-- load google font asynchronously -->
     <script>
       WebFontConfig = {
         google: {
@@ -33,7 +36,7 @@
         s.parentNode.insertBefore(wf, s);
       })();
     </script>
-
+    <!-- inline CSS style -->
     <style>
       html {
         font-size: 100%;
@@ -85,13 +88,13 @@
         header p { padding-left: 4.5em;}
       }
     </style>
-    
+    <!-- Add meida print -->
     <link href="css/print.css" rel="stylesheet" media="print">
   </head>
 
   <body>
     <header>
-      <a href="/"><img src="img/profilepic.jpg"></a>
+      <a href="/"><img src="img/profilepic.jpg"></a><!-- resized and compressed image -->
       <p>Cameron Pittman<br><span>Course Developer</span></p>
     </header>
 
@@ -121,7 +124,7 @@
           </li>
 
           <li>
-            <img style="width: 100px;" src="views/images/pizzeria.jpg">
+            <img style="width: 100px;" src="views/images/pizzeria.jpg"><!-- resized and compressed image -->
             <a href="views/pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
           </li>
